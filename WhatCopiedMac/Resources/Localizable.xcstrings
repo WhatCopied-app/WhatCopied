@@ -1,0 +1,499 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(empty pasteboard)" : {
+      "comment" : "Empty state: (empty pasteboard)",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(空剪贴板)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(空剪貼簿)"
+          }
+        }
+      }
+    },
+    "(no data)" : {
+      "comment" : "Empty state: (no data)",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(无数据)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(無資料)"
+          }
+        }
+      }
+    },
+    "(no preview)" : {
+      "comment" : "Empty state: (no view)",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(无预览)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(無預覽)"
+          }
+        }
+      }
+    },
+    "Check Version History" : {
+      "comment" : "Title for the \"Check Version History\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看版本记录"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檢視版本記錄"
+          }
+        }
+      }
+    },
+    "Clear All Pasteboards" : {
+      "comment" : "Menu item title: Clear All Pasteboards",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除所有剪贴板"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除所有剪貼簿"
+          }
+        }
+      }
+    },
+    "Clear Current Pasteboard" : {
+      "comment" : "Menu item title: Clear Current Pasteboard",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除当前剪贴板"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除當前剪貼簿"
+          }
+        }
+      }
+    },
+    "Clear Other Pasteboards" : {
+      "comment" : "Menu item title: Clear Other Pasteboards",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除其他剪贴板"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除其他剪貼簿"
+          }
+        }
+      }
+    },
+    "Copy Type Name" : {
+      "comment" : "Menu item title: Copy Type Name",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝类型名称"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複製型別名稱"
+          }
+        }
+      }
+    },
+    "Display Mode" : {
+      "comment" : "Toolbar label: Display Mode",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示方式"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顯示方式"
+          }
+        }
+      }
+    },
+    "Failed to get the update." : {
+      "comment" : "Title for failed to get the update",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法获取更新。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法獲取更新。"
+          }
+        }
+      }
+    },
+    "Hexadecimal" : {
+      "comment" : "Display mode: Hexadecimal",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十六进制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十六進位制"
+          }
+        }
+      }
+    },
+    "Image" : {
+      "comment" : "Display mode: Image",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "图像"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圖片"
+          }
+        }
+      }
+    },
+    "Keep Only Images" : {
+      "comment" : "Menu item title: Keep Only Images",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅保留图像"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅保留圖片"
+          }
+        }
+      }
+    },
+    "Keep Only Plain Text" : {
+      "comment" : "Menu item title: Keep Only Plain Text",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅保留纯文本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅保留純文字"
+          }
+        }
+      }
+    },
+    "Learn More" : {
+      "comment" : "Title for the \"Learn More\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "了解更多"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "瞭解更多"
+          }
+        }
+      }
+    },
+    "Not Now" : {
+      "comment" : "Title for the \"Not Now\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等下再说"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等下再說"
+          }
+        }
+      }
+    },
+    "Operations" : {
+      "comment" : "Toolbar label: Operations",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "操作"
+          }
+        }
+      }
+    },
+    "Plain Text" : {
+      "comment" : "Display mode: Plain Text",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "纯文本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "純文字"
+          }
+        }
+      }
+    },
+    "Please check your network connection or get the latest release from the version history." : {
+      "comment" : "Message for failed to get the update",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请检查您的网络连接，或从版本记录中获取最新版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請檢查您的網路連線，或從版本記錄中獲取最新版本。"
+          }
+        }
+      }
+    },
+    "Quick Look" : {
+      "comment" : "Toolbar label: Quick Look",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速查看"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速查看"
+          }
+        }
+      }
+    },
+    "Remind Me Later" : {
+      "comment" : "Title for the \"Remind Me Later\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稍后提醒我"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稍後提醒我"
+          }
+        }
+      }
+    },
+    "Rich Text (HTML)" : {
+      "comment" : "Display mode: Rich Text (HTML)",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "富文本 (HTML)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "富文字 (HTML)"
+          }
+        }
+      }
+    },
+    "Rich Text (RTF)" : {
+      "comment" : "Display mode: Rich Text (RTF)",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "富文本 (RTF)"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "富文字 (RTF)"
+          }
+        }
+      }
+    },
+    "Save to Disk" : {
+      "comment" : "Toolbar label: Save to Disk",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存储为文件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存為檔案"
+          }
+        }
+      }
+    },
+    "Skip This Version" : {
+      "comment" : "Title for the \"Skip This Version\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跳过这个版本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跳過這個版本"
+          }
+        }
+      }
+    },
+    "Source Code" : {
+      "comment" : "Display mode: Source Code",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "源代码"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原始碼"
+          }
+        }
+      }
+    },
+    "WhatCopied %@ is available!" : {
+      "comment" : "Title for new version available",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatCopied %@ 已发布！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatCopied %@ 已釋出！"
+          }
+        }
+      }
+    },
+    "WhatCopied %@ is currently the latest version." : {
+      "comment" : "Message for the up-to-date info",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatCopied %@ 是目前的最新版本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatCopied %@ 是目前的最新版本。"
+          }
+        }
+      }
+    },
+    "You're up-to-date!" : {
+      "comment" : "Title for the up-to-date info",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已安装最新版本！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您已安裝最新版本！"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
