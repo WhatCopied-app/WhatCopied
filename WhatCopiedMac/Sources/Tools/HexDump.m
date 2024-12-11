@@ -10,36 +10,41 @@
 NSString *hexDump(NSData *data, NSUInteger bytesPerRow) {
   const uint8_t *bytes = (const uint8_t *)data.bytes;
   NSUInteger length = data.length;
-  NSMutableString *result = [NSMutableString stringWithCapacity:(length / bytesPerRow + 1) * (10 + bytesPerRow * 4)];
 
-  char lineBuffer[1024]; // Enough space for typical rows
+  NSMutableString *result = [NSMutableString stringWithCapacity:length * 4];
+  NSMutableData *lineBuffer = [NSMutableData dataWithLength:(bytesPerRow * 3 - 1) + bytesPerRow + 20];
+  char *line = (char *)lineBuffer.mutableBytes;
 
   for (NSUInteger i = 0; i < length; i += bytesPerRow) {
     // Offset column
-    char *cursor = lineBuffer;
-    cursor += snprintf(cursor, sizeof(lineBuffer), "%08ld: ", (unsigned long)i);
+    snprintf(line, 10, "%08ld:", (unsigned long)i);
+    char *cursor = line + 9;
 
     // Hex column
     NSUInteger rowLength = MIN(bytesPerRow, length - i);
     for (NSUInteger j = 0; j < rowLength; j++) {
-      cursor += snprintf(cursor, 4, "%02X ", bytes[i + j]);
+      snprintf(cursor, 4, " %02X", bytes[i + j]);
+      cursor += 3;
     }
 
     if (rowLength < bytesPerRow) {
-      memset(cursor, ' ', (bytesPerRow - rowLength) * 3);
-      cursor += (bytesPerRow - rowLength) * 3;
+      NSUInteger padding = (bytesPerRow - rowLength) * 3;
+      memset(cursor, ' ', padding);
+      cursor += padding;
     }
 
     // ASCII column
     *cursor++ = ' ';
+    *cursor++ = ' ';
     for (NSUInteger j = 0; j < rowLength; j++) {
       uint8_t byte = bytes[i + j];
-      *cursor++ = (byte >= 32 && byte < 127) ? (char)byte : '.';
+      BOOL useByte = (byte >= 32 && byte < 127) || (byte >= 160 && byte < 255);
+      *cursor++ = useByte ? (char)byte : '.';
     }
 
     *cursor++ = '\n';
     *cursor = '\0';
-    [result appendString:[NSString stringWithUTF8String:lineBuffer]];
+    [result appendFormat:@"%s", line];
   }
 
   return result;
