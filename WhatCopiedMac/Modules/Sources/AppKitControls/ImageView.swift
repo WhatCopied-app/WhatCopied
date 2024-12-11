@@ -45,10 +45,5 @@ public final class ImageView: NSScrollView {
 
   // MARK: - Private
 
-  private let actualView: NSImageView = {
-    let view = NSImageView()
-    view.imageScaling = .scaleProportionallyUpOrDown
-
-    return view
-  }()
+  private let actualView = NSImageView()
 }
