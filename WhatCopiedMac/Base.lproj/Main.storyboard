@@ -70,6 +70,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Quick Look..." keyEquivalent=" " id="dbI-LU-p8b">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="presentQuickLook:" target="Ady-hI-5gd" id="00D-EN-rgo"/>
                                             </connections>

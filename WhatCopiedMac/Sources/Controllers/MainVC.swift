@@ -49,6 +49,16 @@ final class MainVC: NSViewController {
       name: .pasteboardChanged,
       object: nil
     )
+
+    NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+      // Press spacebar to quick look, just like Finder
+      if let self, self.view.window?.isKeyWindow == true, event.keyCode == 0x31 {
+        self.presentQuickLook(nil)
+        return nil
+      }
+
+      return event
+    }
   }
 
   override func viewWillAppear() {
