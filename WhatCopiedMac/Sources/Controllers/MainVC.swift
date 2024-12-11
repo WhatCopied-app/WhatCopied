@@ -70,8 +70,6 @@ final class MainVC: NSViewController {
   }
 
   override func endPreviewPanelControl(_ panel: QLPreviewPanel?) {
-    Task { @MainActor in
-      try? FileManager.default.removeItem(at: previewingFileURL)
-    }
+    // no-op
   }
 }

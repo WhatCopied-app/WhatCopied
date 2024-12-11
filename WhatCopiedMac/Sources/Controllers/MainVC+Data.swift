@@ -27,7 +27,7 @@ extension MainVC {
   }
 
   var previewingFileURL: URL {
-    URL.temporaryDirectory.appendingPathComponent(suggestedFileName)
+    .previewingDirectory.appendingPathComponent(suggestedFileName)
   }
 
   func reloadTypes() {
