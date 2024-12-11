@@ -8,7 +8,7 @@
 import Foundation
 
 public extension String {
-  static func decode(data: Data, encodings: [String.Encoding] = [.utf8, .utf16]) -> Self {
+  static func decode(data: Data, encodings: [String.Encoding] = [.utf8]) -> Self {
     for encoding in encodings {
       if let string = Self(data: data, encoding: encoding) {
         return string
