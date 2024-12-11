@@ -8,15 +8,6 @@
 import AppKit
 
 public extension NSScrollView {
-  var allowsNonContiguousLayout: Bool {
-    get {
-      textView?.layoutManager?.allowsNonContiguousLayout ?? false
-    }
-    set {
-      textView?.layoutManager?.allowsNonContiguousLayout = newValue
-    }
-  }
-
   var monospacedText: String {
     get {
       attributedText.string

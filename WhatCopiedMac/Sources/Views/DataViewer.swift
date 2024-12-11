@@ -67,7 +67,6 @@ final class DataViewer: NSView {
 
     textView.isHidden = !mode.usesTextView
     textView.contentView.scroll(to: .zero)
-    textView.allowsNonContiguousLayout = mode == .hex
 
     htmlView.isHidden = mode != .html
     codeView.isHidden = mode != .sourceCode
