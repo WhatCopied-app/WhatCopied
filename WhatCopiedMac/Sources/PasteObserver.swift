@@ -24,20 +24,12 @@ final class PasteObserver {
         return
       }
 
-      DispatchQueue.main.async {
-        let newToken = NSPasteboard.changeToken
-        guard self.changeToken != newToken else {
-          return
-        }
-
-        self.changeToken = newToken
-        NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
-      }
+      DispatchQueue.main.async(execute: checkChangeToken)
     }
 
     self.timer = timer
+    self.checkChangeToken()
     RunLoop.current.add(timer, forMode: .common)
-    NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
   }
 
   func stopObserving() {
@@ -52,5 +44,15 @@ final class PasteObserver {
 
   private init() {
     // no-op
+  }
+
+  private func checkChangeToken() {
+    let newToken = NSPasteboard.changeToken
+    guard changeToken != newToken else {
+      return
+    }
+
+    changeToken = newToken
+    NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
   }
 }
