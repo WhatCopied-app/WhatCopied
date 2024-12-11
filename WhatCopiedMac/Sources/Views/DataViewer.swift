@@ -21,12 +21,24 @@ final class DataViewer: NSView {
     view.minMagnification = 1.0
 
     if let textView = view.documentView as? NSTextView {
-      textView.isEditable = false
       textView.drawsBackground = false
+      textView.isEditable = false
       textView.isSelectable = true
       textView.usesFindPanel = true
-      textView.textContainerInset = CGSize(width: 10, height: 10)
       textView.textContainer?.lineFragmentPadding = 0
+
+      // We avoid using width in textContainerInset as it disrupts the cursor style
+      textView.textContainerInset = CGSize(
+        width: 0,
+        height: Constants.textContainerInset
+      )
+
+      // Instead, we use a tail indent and adjust the leading position to achieve the same effect
+      textView.defaultParagraphStyle = {
+        let style = NSMutableParagraphStyle()
+        style.tailIndent = -textView.textContainerInset.height
+        return style
+      }()
     } else {
       Logger.assertFail("Unable to cast documentView as NSTextView")
     }
@@ -43,7 +55,16 @@ final class DataViewer: NSView {
     super.init(frame: .zero)
     wantsLayer = true
 
-    textView.fillView(self)
+    textView.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(textView)
+
+    NSLayoutConstraint.activate([
+      textView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.textContainerInset),
+      textView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      textView.topAnchor.constraint(equalTo: topAnchor),
+      textView.bottomAnchor.constraint(equalTo: bottomAnchor),
+    ])
+
     htmlView.fillView(self)
     codeView.fillView(self)
     imageView.fillView(self)
@@ -66,8 +87,6 @@ final class DataViewer: NSView {
     }
 
     textView.isHidden = !mode.usesTextView
-    textView.contentView.scroll(to: .zero)
-
     htmlView.isHidden = mode != .html
     codeView.isHidden = mode != .sourceCode
     imageView.isHidden = mode != .image
@@ -103,6 +122,10 @@ final class DataViewer: NSView {
 // MARK: - Private
 
 private extension DataViewer {
+  enum Constants {
+    static let textContainerInset: Double = 10
+  }
+
   func showEmptyView() {
     subviews.forEach {
       $0.isHidden = $0 != emptyView

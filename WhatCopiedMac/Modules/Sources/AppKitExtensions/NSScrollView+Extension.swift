@@ -26,6 +26,7 @@ public extension NSScrollView {
     }
     set {
       textView?.textStorage?.setAttributedString(newValue)
+      contentView.scroll(to: .zero)
       magnification = 1.0
     }
   }
