@@ -12,6 +12,9 @@ The ultimate pasteboard debugger for macOS developers.
 
 <img src="./Screenshots/03.png" width="540" alt="Screenshot 03">
 
+> [!TIP]
+> Discover our other free and open-source apps at [libremac.github.io](https://libremac.github.io/).
+
 ## Installation
 
 Get `WhatCopied.dmg` from the <a href="https://github.com/WhatCopied-app/WhatCopied/releases/latest" target="_blank">latest release</a>, open it and drag `WhatCopied.app` to `Applications`.
