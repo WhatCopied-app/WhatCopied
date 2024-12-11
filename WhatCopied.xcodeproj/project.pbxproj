@@ -55,9 +55,8 @@
 			children = (
 				87B6CFBD2CFECBC7005FC04A /* WhatCopiedTools */,
 				87B6CF6A2CFE9EA3005FC04A /* WhatCopiedMac */,
-				87B6CF772CFEA09B005FC04A /* Build.xcconfig */,
-				87B6D0162CFEE956005FC04A /* Frameworks */,
 				87B6CF422CFE9C63005FC04A /* Products */,
+				87B6CF772CFEA09B005FC04A /* Build.xcconfig */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -90,13 +89,6 @@
 				87B6CF632CFE9DEB005FC04A /* Supporting Files */,
 			);
 			path = WhatCopiedMac;
-			sourceTree = "<group>";
-		};
-		87B6D0162CFEE956005FC04A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

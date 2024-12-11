@@ -1,0 +1,6 @@
+project: WhatCopied.xcodeproj
+retain_public: true
+schemes:
+- WhatCopiedMac
+targets:
+- WhatCopied
