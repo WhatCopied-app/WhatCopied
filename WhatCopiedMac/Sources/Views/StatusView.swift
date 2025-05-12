@@ -31,7 +31,7 @@ final class StatusView: NSView {
       view.model.text = "\(data.byteCount): \(dataType)"
       view.model.style = .primary
     } else {
-      view.model.text = Localized.EmptyState.data
+      view.model.text = Localized.ErrorState.data
       view.model.style = .secondary
     }
   }

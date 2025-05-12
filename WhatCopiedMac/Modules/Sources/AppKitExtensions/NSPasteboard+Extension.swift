@@ -64,6 +64,14 @@ public extension NSPasteboard {
     }
   }
 
+  var hasLimitedAccess: Bool {
+    guard #available(macOS 15.4, *) else {
+      return false
+    }
+
+    return accessBehavior != .alwaysAllow
+  }
+
   /**
    Default pasteboards we care about.
    */

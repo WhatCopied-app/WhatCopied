@@ -41,7 +41,6 @@ final class MainVC: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     addChildViews()
-    reloadTypes()
 
     NotificationCenter.default.addObserver(
       self,
@@ -65,6 +64,11 @@ final class MainVC: NSViewController {
     super.viewWillAppear()
     splitView.setPosition(200, ofDividerAt: 0)
     configureToolbar()
+  }
+
+  override func viewDidAppear() {
+    super.viewDidAppear()
+    reloadTypes()
   }
 
   // MARK: - QLPreviewPanel

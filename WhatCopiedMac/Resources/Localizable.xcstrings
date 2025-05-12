@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "(empty pasteboard)" : {
-      "comment" : "Empty state: (empty pasteboard)",
+      "comment" : "Error state: (empty pasteboard)",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -19,7 +19,7 @@
       }
     },
     "(no data)" : {
-      "comment" : "Empty state: (no data)",
+      "comment" : "Error state: (no data)",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -36,7 +36,7 @@
       }
     },
     "(no preview)" : {
-      "comment" : "Empty state: (no view)",
+      "comment" : "Error state: (no view)",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -252,6 +252,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "瞭解更多"
+          }
+        }
+      }
+    },
+    "Limited Access" : {
+      "comment" : "Error state: Limited Access",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "访问受限"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "訪問受限"
           }
         }
       }

@@ -49,7 +49,7 @@ final class DataViewer: NSView {
   private let htmlView = HtmlView()
   private let codeView = CodeView()
   private let imageView = ImageView()
-  private let emptyView = StaticText(Localized.EmptyState.preview)
+  private let emptyView = StaticText(Localized.ErrorState.preview)
 
   init() {
     super.init(frame: .zero)

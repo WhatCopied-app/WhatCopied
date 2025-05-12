@@ -37,10 +37,11 @@ enum Localized {
     static let hex = String(localized: "Hexadecimal", comment: "Display mode: Hexadecimal")
   }
 
-  enum EmptyState {
-    static let pasteboard = String(localized: "(empty pasteboard)", comment: "Empty state: (empty pasteboard)")
-    static let data = String(localized: "(no data)", comment: "Empty state: (no data)")
-    static let preview = String(localized: "(no preview)", comment: "Empty state: (no view)")
+  enum ErrorState {
+    static let pasteboard = String(localized: "(empty pasteboard)", comment: "Error state: (empty pasteboard)")
+    static let data = String(localized: "(no data)", comment: "Error state: (no data)")
+    static let preview = String(localized: "(no preview)", comment: "Error state: (no view)")
+    static let limitedAccess = String(localized: "Limited Access", comment: "Error state: Limited Access")
   }
 }
 
@@ -49,6 +50,7 @@ enum Localized {
 // Note: double check availability and deployment target before adding new icons
 enum Icons {
   static let eye = "eye"
+  static let handRaisedSlash = "hand.raised.slash"
   static let squareAndArrowDown = "square.and.arrow.down"
   static let wandAndSparkles = "wand.and.sparkles"
 }

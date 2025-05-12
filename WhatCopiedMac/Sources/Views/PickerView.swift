@@ -92,7 +92,7 @@ private struct PickerViewImpl: View {
       Divider()
 
       if model.types.isEmpty {
-        Text(Localized.EmptyState.pasteboard)
+        Text(Localized.ErrorState.pasteboard)
           .foregroundStyle(.secondary)
           .frame(maxWidth: .infinity, maxHeight: .infinity)
       } else {
@@ -129,6 +129,15 @@ private struct PickerViewImpl: View {
             scrollView.scrollTo(model.selection, anchor: .bottom)
           }
         }
+      }
+
+      if NSPasteboard.general.hasLimitedAccess {
+        Button {
+          NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/wiki#limited-access")
+        } label: {
+          Label(Localized.ErrorState.limitedAccess, systemImage: Icons.handRaisedSlash)
+        }
+        .padding()
       }
     }
   }

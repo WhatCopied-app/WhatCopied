@@ -24,17 +24,18 @@ final class PasteObserver {
         return
       }
 
-      DispatchQueue.main.async(execute: checkChangeToken)
+      Task { @MainActor in
+        guard NSApp.keyWindow != nil else {
+          return
+        }
+
+        self.checkChangeToken()
+      }
     }
 
     self.timer = timer
     self.checkChangeToken()
     RunLoop.current.add(timer, forMode: .common)
-  }
-
-  func stopObserving() {
-    timer?.invalidate()
-    timer = nil
   }
 
   // MARK: - Private

@@ -10,20 +10,6 @@ import AppKit
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(windowDidBecomeKey(_:)),
-      name: NSWindow.didBecomeKeyNotification,
-      object: nil
-    )
-
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(windowDidResignKey(_:)),
-      name: NSWindow.didResignKeyNotification,
-      object: nil
-    )
-
     let silentlyCheckUpdates: @Sendable () -> Void = {
       Task {
         await AppUpdater.checkForUpdates(explicitly: false)
@@ -37,6 +23,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     Timer.scheduledTimer(withTimeInterval: 7 * 24 * 60 * 60, repeats: true) { _ in
       silentlyCheckUpdates()
     }
+
+    // Run a observer to refresh the pasteboard repeatedly
+    PasteObserver.default.startObserving()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
@@ -67,26 +56,5 @@ extension AppDelegate {
 
   @IBAction func openVersionHistory(_ sender: Any?) {
     NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/releases")
-  }
-}
-
-// MARK: - Private
-
-@MainActor
-private extension AppDelegate {
-  @objc func windowDidBecomeKey(_ notification: Notification) {
-    if shouldUpdateObserver(for: notification) {
-      PasteObserver.default.startObserving()
-    }
-  }
-
-  @objc func windowDidResignKey(_ notification: Notification) {
-    if shouldUpdateObserver(for: notification) {
-      PasteObserver.default.stopObserving()
-    }
-  }
-
-  func shouldUpdateObserver(for notification: Notification) -> Bool {
-    (notification.object as? NSWindow)?.contentViewController is MainVC
   }
 }

@@ -23,6 +23,8 @@ Get `WhatCopied.dmg` from the <a href="https://github.com/WhatCopied-app/WhatCop
 
 WhatCopied checks for updates automatically. You can also check manually via the main `WhatCopied` menu, or browse version history [here](https://github.com/WhatCopied-app/WhatCopied/releases).
 
+> For information on pasteboard access issues in macOS 15.4 and later, please refer to our [wiki](https://github.com/WhatCopied-app/WhatCopied/wiki#limited-access).
+
 ## Why WhatCopied
 
 Apple provides a developer tool called **Clipboard Viewer**, included in the "Xcode Additional Tools", which you can download [here](https://developer.apple.com/download/all/?q=Additional%20Tools).
