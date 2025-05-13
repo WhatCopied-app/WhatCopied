@@ -43,28 +43,35 @@ extension MainVC {
   }
 
   func reloadViewer(detectType: Bool = false) {
-    let data = DataWrapper(selectedData)
-    if detectType {
-      let preferredMode = preferredDisplayMode(
-        ofData: data,
-        dataType: dataType
+    Task.detached(priority: .userInitiated) {
+      let data = await DataWrapper(
+        self.selectedData
       )
 
-      if preferredMode != displayMode {
-        Logger.log(.info, "Switching to preferred mode: \(preferredMode)")
-        displayMode = preferredMode
+      await MainActor.run {
+        if detectType {
+          let preferredMode = self.preferredDisplayMode(
+            ofData: data,
+            dataType: self.dataType
+          )
 
-        // Reselect the toolbar popup button
-        if let item = (currentToolbar?.items.first {
-          $0.itemIdentifier == .displayModeItem
-        }) as? NSToolbarItemGroup, let index = DisplayMode.allCases.firstIndex(of: preferredMode) {
-          item.selectedIndex = index
+          if preferredMode != self.displayMode {
+            Logger.log(.info, "Switching to preferred mode: \(preferredMode)")
+            self.displayMode = preferredMode
+
+            // Reselect the toolbar popup button
+            if let item = (self.currentToolbar?.items.first {
+              $0.itemIdentifier == .displayModeItem
+            }) as? NSToolbarItemGroup, let index = DisplayMode.allCases.firstIndex(of: preferredMode) {
+              item.selectedIndex = index
+            }
+          }
         }
+
+        self.dataViewer.reloadData(data, mode: self.displayMode)
+        self.statusView.reloadData(data, dataType: self.dataType)
       }
     }
-
-    dataViewer.reloadData(data, mode: displayMode)
-    statusView.reloadData(data, dataType: dataType)
   }
 
   @objc func pasteboardChanged() {

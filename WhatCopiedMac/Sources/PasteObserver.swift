@@ -48,12 +48,16 @@ final class PasteObserver {
   }
 
   private func checkChangeToken() {
-    let newToken = NSPasteboard.changeToken
-    guard changeToken != newToken else {
-      return
-    }
+    Task.detached(priority: .background) {
+      let newToken = NSPasteboard.changeToken
+      guard await self.changeToken != newToken else {
+        return
+      }
 
-    changeToken = newToken
-    NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
+      await MainActor.run {
+        self.changeToken = newToken
+        NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
+      }
+    }
   }
 }
