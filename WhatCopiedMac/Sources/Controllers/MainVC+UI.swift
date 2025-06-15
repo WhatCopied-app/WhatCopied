@@ -83,6 +83,7 @@ extension MainVC {
     savePanel.title = Localized.Toolbar.saveToDisk
     savePanel.nameFieldStringValue = suggestedFileName
     savePanel.isExtensionHidden = false
+    savePanel.titlebarAppearsTransparent = true
 
     savePanel.begin { [weak self] response in
       guard response == .OK, let data = self?.selectedData, let url = savePanel.url else {
