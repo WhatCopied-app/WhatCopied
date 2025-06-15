@@ -86,14 +86,16 @@ extension MainVC {
     savePanel.titlebarAppearsTransparent = true
 
     savePanel.begin { [weak self] response in
-      guard response == .OK, let data = self?.selectedData, let url = savePanel.url else {
-        return Logger.log(.info, "Skipped saving")
-      }
+      Task { @MainActor in
+        guard response == .OK, let data = self?.selectedData, let url = savePanel.url else {
+          return Logger.log(.info, "Skipped saving")
+        }
 
-      do {
-        try data.write(to: url, options: .atomic)
-      } catch {
-        Logger.log(.error, "Failed to save the file")
+        do {
+          try data.write(to: url, options: .atomic)
+        } catch {
+          Logger.log(.error, "Failed to save the file")
+        }
       }
     }
   }
