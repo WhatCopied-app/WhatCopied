@@ -82,6 +82,7 @@ private struct PickerViewImpl: View {
       } label: {
         // no-op
       }
+      .modifier(FlexibleButtonSize())
       .padding(10)
       .onChange(of: pasteboardName) {
         if let pasteboardObject {
@@ -151,5 +152,19 @@ private extension PickerViewImpl {
     Logger.assert(pasteboard != nil, "Invalid pasteboard: \(pasteboardName)")
 
     return pasteboard
+  }
+}
+
+private struct FlexibleButtonSize: ViewModifier {
+  func body(content: Content) -> some View {
+  #if BUILD_WITH_SDK_26_OR_LATER
+    if #available(macOS 26.0, *) {
+      content.buttonSizing(.flexible)
+    } else {
+      content
+    }
+  #else
+    content
+  #endif
   }
 }
