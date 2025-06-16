@@ -9,9 +9,9 @@
 CODE_SIGN_IDENTITY = -
 DEVELOPMENT_TEAM =
 PRODUCT_BUNDLE_IDENTIFIER = app.cyan.whatcopied-dev
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=macosx26.*] = $(inherited) BUILD_WITH_SDK_26_OR_LATER
 
 MARKETING_VERSION = 1.1.0
 CURRENT_PROJECT_VERSION = 2
 
-#include? "SwiftFlags.xcconfig"
 #include? "Local.xcconfig"
