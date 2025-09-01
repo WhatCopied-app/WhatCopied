@@ -47,7 +47,7 @@ final class DataViewer: NSView {
   }()
 
   private let htmlView = HtmlView()
-  private let codeView = CodeView()
+  private let codeView = CodeView(margin: AppDesign.contentMargin)
   private let imageView = ImageView()
   private let emptyView = StaticText(Localized.ErrorState.preview)
 
@@ -78,7 +78,10 @@ final class DataViewer: NSView {
 
   override func layout() {
     super.layout()
-    layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+
+    if !AppDesign.modernStyle {
+      layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+    }
   }
 
   func reloadData(_ data: DataWrapper?, mode: DisplayMode) {
@@ -123,7 +126,7 @@ final class DataViewer: NSView {
 
 private extension DataViewer {
   enum Constants {
-    static let textContainerInset: Double = 10
+    @MainActor static let textContainerInset = AppDesign.contentMargin
   }
 
   func showEmptyView() {

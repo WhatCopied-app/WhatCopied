@@ -71,7 +71,10 @@ extension MainVC: NSToolbarDelegate {
   }
 
   func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-    [.displayModeItem, .quickLookItem, .operationsItem, .saveToDiskItem]
+    [
+      .toggleSidebar, .sidebarTrackingSeparator,
+      .displayModeItem, .quickLookItem, .operationsItem, .saveToDiskItem,
+    ]
   }
 }
 

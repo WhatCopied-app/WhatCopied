@@ -56,7 +56,7 @@ private struct StatusViewImpl: View {
         .font(.callout)
         .lineLimit(1)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .padding(.horizontal, 5)
+        .padding(.horizontal, AppDesign.contentMargin)
     }
   }
 }

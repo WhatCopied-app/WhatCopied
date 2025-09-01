@@ -15,10 +15,10 @@ import os.log
 public final class CodeView: NSView {
   private let htmlView = HtmlView()
 
-  public init() {
+  public init(margin: Double) {
     super.init(frame: .zero)
 
-    htmlView.loadHtml(indexHtml ?? "")
+    htmlView.loadHtml(indexHtml?.replacingOccurrences(of: "\"{{MARGIN}}\"", with: "\(margin)px") ?? "")
     htmlView.fillView(self)
   }
 
