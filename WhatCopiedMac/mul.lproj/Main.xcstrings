@@ -1585,6 +1585,19 @@
         }
       }
     },
+    "wmq-0c-462.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Toggle Sidebar\"; ObjectID = \"wmq-0c-462\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Toggle Sidebar"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "wpr-3q-Mcd.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Help\"; ObjectID = \"wpr-3q-Mcd\";",
       "extractionState" : "extracted_with_value",

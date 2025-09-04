@@ -8,19 +8,10 @@
 import AppKit
 import QuickLookUI
 
-final class MainVC: NSViewController {
+final class MainVC: NSSplitViewController {
   var pasteboard = NSPasteboard.general
   var dataType = ""
   var displayMode = DisplayMode.text
-
-  lazy var splitView: NSSplitView = {
-    let view = NSSplitView()
-    view.isVertical = true
-    view.dividerStyle = .thin
-    view.delegate = self
-
-    return view
-  }()
 
   lazy var pickerView: PickerView = {
     let view = PickerView(

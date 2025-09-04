@@ -90,8 +90,6 @@ private struct PickerViewImpl: View {
         }
       }
 
-      Divider()
-
       if model.types.isEmpty {
         Text(Localized.ErrorState.pasteboard)
           .foregroundStyle(.secondary)
