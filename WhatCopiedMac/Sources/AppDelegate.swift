@@ -14,6 +14,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var modernSaveToDiskItem: NSMenuItem?
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
+    // "Populating a menu window that is already visible"
+    NSMenu.swizzleIsUpdatedExcludingContentTypesOnce
+
     if AppDesign.menuIconEvolution {
       normalizeMainMenuIcons()
     }
