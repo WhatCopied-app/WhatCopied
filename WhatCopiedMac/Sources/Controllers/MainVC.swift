@@ -62,6 +62,11 @@ final class MainVC: NSSplitViewController {
     reloadTypes()
   }
 
+  override func mouseMoved(with event: NSEvent) {
+    super.mouseMoved(with: event)
+    handleMouseMoved(with: event)
+  }
+
   // MARK: - QLPreviewPanel
 
   override func acceptsPreviewPanelControl(_ panel: QLPreviewPanel?) -> Bool {

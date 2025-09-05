@@ -49,6 +49,20 @@ extension MainVC {
     ])
   }
 
+  func handleMouseMoved(with event: NSEvent) {
+    guard view.window?.isKeyWindow == true, NSCursor.current != .arrow else {
+      return
+    }
+
+    let boundary = view.bounds.height - view.safeAreaInsets.top
+    let location = event.locationInWindow.y
+
+    // NSTextView makes the cursor "I-beam" in its safe area
+    if location > boundary && location < view.frame.height {
+      NSCursor.arrow.push()
+    }
+  }
+
   @objc func didSelectViewer(_ sender: NSToolbarItemGroup) {
     displayMode = DisplayMode.allCases[sender.selectedIndex]
     reloadViewer()
