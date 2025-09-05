@@ -94,6 +94,9 @@ private struct PickerViewImpl: View {
         Text(Localized.ErrorState.pasteboard)
           .foregroundStyle(.secondary)
           .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+        // Optically center
+        Spacer(minLength: 40)
       } else {
         ScrollViewReader { scrollView in
           let selection = Binding(
