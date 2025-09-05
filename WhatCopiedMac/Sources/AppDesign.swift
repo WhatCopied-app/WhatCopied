@@ -47,4 +47,26 @@ enum AppDesign {
   static var contentMargin: Double {
     modernStyle ? 15 : 10
   }
+
+  /**
+   Returns `true` to gradually add icons to the menu bar.
+
+   It will be enabled as long as macOS Tahoe runs.
+   */
+  static var menuIconEvolution: Bool {
+    isMacOSTahoe
+  }
+}
+
+// MARK: - Private
+
+private extension AppDesign {
+  static var isMacOSTahoe: Bool {
+    // [macOS 26] Change this to 26.0
+    guard #available(macOS 16.0, *) else {
+      return false
+    }
+
+    return true
+  }
 }

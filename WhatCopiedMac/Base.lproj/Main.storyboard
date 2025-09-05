@@ -376,7 +376,13 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target">
+                    <connections>
+                        <outlet property="modernCheckForUpdatesItem" destination="j38-jP-sHv" id="H8U-KN-DsS"/>
+                        <outlet property="modernQuickLookItem" destination="dbI-LU-p8b" id="bf7-Kc-xj2"/>
+                        <outlet property="modernSaveToDiskItem" destination="gUf-s0-t3N" id="z5o-PK-70g"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
