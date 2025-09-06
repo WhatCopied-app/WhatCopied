@@ -17,6 +17,7 @@ public final class ImageView: NSScrollView {
     }
     set {
       actualView.image = newValue
+      contentView.scroll(to: CGPoint(x: 0, y: safeAreaInsets.top))
       magnification = 1.0
     }
   }
