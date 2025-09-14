@@ -2,7 +2,7 @@
 
 # WhatCopied
 
-[![](https://img.shields.io/badge/Platform-macOS_14.0+-blue?color=007bff)](https://github.com/WhatCopied-app/WhatCopied/releases/latest)  [![](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml)
+[![](https://img.shields.io/badge/Platform-macOS_15.0+-blue?color=007bff)](https://github.com/WhatCopied-app/WhatCopied/releases/latest)  [![](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml)
 
 The ultimate pasteboard debugger for macOS developers.
 
@@ -24,6 +24,8 @@ Get `WhatCopied.dmg` from the <a href="https://github.com/WhatCopied-app/WhatCop
 WhatCopied checks for updates automatically. You can also check manually via the main `WhatCopied` menu, or browse version history [here](https://github.com/WhatCopied-app/WhatCopied/releases).
 
 > For information on pasteboard access issues in macOS 15.4 and later, please refer to our [wiki](https://github.com/WhatCopied-app/WhatCopied/wiki#limited-access).
+>
+> Older builds: [macos-14](https://github.com/WhatCopied-app/WhatCopied/releases/tag/macos-14).
 
 ## Why WhatCopied
 

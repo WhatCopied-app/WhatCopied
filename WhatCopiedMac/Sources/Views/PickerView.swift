@@ -158,14 +158,10 @@ private extension PickerViewImpl {
 
 private struct FlexibleButtonSize: ViewModifier {
   func body(content: Content) -> some View {
-  #if BUILD_WITH_SDK_26_OR_LATER
     if #available(macOS 26.0, *) {
       content.buttonSizing(.flexible)
     } else {
       content
     }
-  #else
-    content
-  #endif
   }
 }
