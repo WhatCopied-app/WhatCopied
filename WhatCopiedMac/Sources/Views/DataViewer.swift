@@ -100,7 +100,7 @@ final class DataViewer: NSView {
     case .text:
       textView.monospacedText = data.plainText
     case .html:
-      htmlView.loadHtml(data.plainText)
+      htmlView.loadHtml(data.plainText, padding: AppDesign.modernStyle ? 7.0 : nil)
     case .sourceCode:
       codeView.loadCode(data.plainText)
     case .hex:

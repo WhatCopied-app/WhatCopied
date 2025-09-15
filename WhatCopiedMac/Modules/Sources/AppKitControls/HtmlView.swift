@@ -35,8 +35,13 @@ public final class HtmlView: WKWebView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  public func loadHtml(_ html: String) {
-    loadHTMLString("\(html)\n\n\(styleSheet)", baseURL: nil)
+  public func loadHtml(_ html: String, padding: Double? = nil) {
+    let styleSheets = [
+      defaultStyles,
+      padding.map { "<style>body { padding: \($0)px; }</style>" },
+    ].compactMap { $0 }
+
+    loadHTMLString("\(html)\n\n\(styleSheets.joined(separator: "\n"))", baseURL: nil)
     magnification = 1.0
   }
 
@@ -73,9 +78,9 @@ extension HtmlView: WKNavigationDelegate {
 
 private extension HtmlView {
   /**
-   Style to enable dark mode and default system fonts.
+   Default styles to enable dark mode and default system fonts.
    */
-  var styleSheet: String {
+  var defaultStyles: String {
     """
     <style>
       :root {
