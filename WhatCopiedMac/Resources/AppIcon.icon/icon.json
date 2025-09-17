@@ -1,0 +1,92 @@
+{
+  "fill" : "system-dark",
+  "groups" : [
+    {
+      "blur-material" : null,
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "gray:0.40000,1.00000"
+          },
+          "glass" : true,
+          "image-name" : "Frame.svg",
+          "name" : "Frame",
+          "opacity" : 1
+        }
+      ],
+      "name" : "Paper",
+      "shadow" : {
+        "kind" : "none",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "layers" : [
+        {
+          "fill" : {
+            "linear-gradient" : [
+              "gray:1.00000,1.00000",
+              "gray:0.80000,1.00000"
+            ]
+          },
+          "glass" : true,
+          "image-name" : "Clip.svg",
+          "name" : "Clip",
+          "opacity" : 1
+        }
+      ],
+      "name" : "Clip",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "blur-material" : null,
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "srgb:0.00000,1.00000,0.25490,1.00000"
+          },
+          "image-name" : "Head.svg",
+          "name" : "Head"
+        },
+        {
+          "fill" : {
+            "linear-gradient" : [
+              "srgb:0.00000,1.00000,0.25490,1.00000",
+              "srgb:0.00000,0.82353,0.87843,1.00000"
+            ]
+          },
+          "image-name" : "Body.svg",
+          "name" : "Body"
+        }
+      ],
+      "lighting" : "individual",
+      "name" : "Bug",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "macOS"
+    ]
+  }
+}
