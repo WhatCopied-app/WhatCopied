@@ -32,10 +32,10 @@ extension MainVC {
     // DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
     //   if let screen = NSScreen.main {
     //     let frame = CGRect(
-    //       x: 50,
-    //       y: screen.frame.maxY - 482, // 400 + 50 + 32
-    //       width: 600,
-    //       height: 400
+    //       x: 60,
+    //       y: screen.frame.maxY - 548, // 456 + 60 + 32
+    //       width: 684,
+    //       height: 456
     //     )
     //     window.setFrame(frame, display: true, animate: true)
     //   }
