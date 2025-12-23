@@ -7,7 +7,7 @@
 
 import AppKit
 
-extension NSNotification.Name {
+extension Notification.Name {
   static let pasteboardChanged = Self("pasteboardChanged")
 }
 
