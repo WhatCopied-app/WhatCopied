@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,7 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check for Updates..." id="j38-jP-sHv">
+                                        <menuItem title="Check for Updates…" id="j38-jP-sHv">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="lgL-E7-vp3"/>
@@ -69,13 +68,13 @@
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Quick Look..." keyEquivalent=" " id="dbI-LU-p8b">
+                                        <menuItem title="Quick Look…" keyEquivalent=" " id="dbI-LU-p8b">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="presentQuickLook:" target="Ady-hI-5gd" id="00D-EN-rgo"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save to Disk..." keyEquivalent="S" id="gUf-s0-t3N">
+                                        <menuItem title="Save to Disk…" keyEquivalent="S" id="gUf-s0-t3N">
                                             <connections>
                                                 <action selector="saveToDisk:" target="Ady-hI-5gd" id="a2r-MZ-6Kx"/>
                                             </connections>

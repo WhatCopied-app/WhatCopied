@@ -578,13 +578,13 @@
       }
     },
     "dbI-LU-p8b.title" : {
-      "comment" : "Class = \"NSMenuItem\"; title = \"Quick Look...\"; ObjectID = \"dbI-LU-p8b\";",
+      "comment" : "Class = \"NSMenuItem\"; title = \"Quick Look…\"; ObjectID = \"dbI-LU-p8b\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Quick Look..."
+            "value" : "Quick Look…"
           }
         },
         "zh-Hans" : {
@@ -746,13 +746,13 @@
       }
     },
     "gUf-s0-t3N.title" : {
-      "comment" : "Class = \"NSMenuItem\"; title = \"Save to Disk...\"; ObjectID = \"gUf-s0-t3N\";",
+      "comment" : "Class = \"NSMenuItem\"; title = \"Save to Disk…\"; ObjectID = \"gUf-s0-t3N\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Save to Disk..."
+            "value" : "Save to Disk…"
           }
         },
         "zh-Hans" : {
@@ -1010,13 +1010,13 @@
       }
     },
     "j38-jP-sHv.title" : {
-      "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates...\"; ObjectID = \"j38-jP-sHv\";",
+      "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates…\"; ObjectID = \"j38-jP-sHv\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Check for Updates..."
+            "value" : "Check for Updates…"
           }
         },
         "zh-Hans" : {
