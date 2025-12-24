@@ -43,6 +43,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 // MARK: - Action Handlers
 
 extension AppDelegate {
+  // Workaround: customized to ensure the icon renders correctly
+  @IBAction func hideWhatCopied(_ sender: Any?) {
+    NSApp.hide(sender)
+  }
+
+  // Workaround: customized to ensure the icon renders correctly
+  @IBAction func hideOthers(_ sender: Any?) {
+    NSApp.hideOtherApplications(sender)
+  }
+
+  // Workaround: customized to ensure the icon renders correctly
+  @IBAction func quitWhatCopied(_ sender: Any?) {
+    NSApp.terminate(sender)
+  }
+
   @IBAction func checkForUpdates(_ sender: Any?) {
     Task {
       await AppUpdater.checkForUpdates(explicitly: true)

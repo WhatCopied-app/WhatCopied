@@ -33,15 +33,15 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide WhatCopied" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide WhatCopied" secondaryImage="Hide_app" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
-                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                                <action selector="hideWhatCopied:" target="Voe-Tx-rLC" id="gZh-0Z-OhA"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                        <menuItem title="Hide Others" secondaryImage="Hide_others" keyEquivalent="h" id="Vdr-fp-XzO">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
-                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                                <action selector="hideOthers:" target="Voe-Tx-rLC" id="2Md-Yo-1xD"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Show All" id="Kd2-mp-pUS">
@@ -51,9 +51,9 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit WhatCopied" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit WhatCopied" secondaryImage="Quit_app" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
-                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                                <action selector="quitWhatCopied:" target="Voe-Tx-rLC" id="B9t-Xm-19w"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -107,7 +107,7 @@
                                                 <action selector="copy:" target="Ady-hI-5gd" id="G1f-GL-Joy"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Copy Type Name" id="6Gh-Ab-9Kd">
+                                        <menuItem title="Copy Type Name" secondaryImage="tag" catalog="system" id="6Gh-Ab-9Kd">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="copyTypeName:" target="Ady-hI-5gd" id="JXW-IE-fFN"/>
@@ -412,9 +412,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Hide_app" width="18" height="14"/>
+        <image name="Hide_others" width="19" height="15"/>
+        <image name="Quit_app" width="18" height="14"/>
         <image name="arrow.trianglehead.2.clockwise.rotate.90.circle" catalog="system" width="15" height="15"/>
         <image name="clock.arrow.trianglehead.counterclockwise.rotate.90" catalog="system" width="16" height="15"/>
         <image name="eye" catalog="system" width="21" height="13"/>
         <image name="square.and.arrow.down" catalog="system" width="15" height="17"/>
+        <image name="tag" catalog="system" width="17" height="17"/>
     </resources>
 </document>
