@@ -41,6 +41,12 @@ final class MainVC: NSSplitViewController {
     )
 
     NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+      // Kill the app immediately on Cmd-Q and Cmd-W to work around a known hang issue
+      if event.deviceIndependentFlags == .command, event.keyCode == 0x0C || event.keyCode == 0x0D {
+        NSApp.terminate(nil)
+        return nil
+      }
+
       // Press spacebar to quick look, just like Finder
       if let self, self.view.window?.isKeyWindow == true, event.keyCode == 0x31 {
         self.presentQuickLook(nil)
