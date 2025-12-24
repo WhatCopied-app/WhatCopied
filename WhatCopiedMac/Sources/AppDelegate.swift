@@ -9,17 +9,9 @@ import AppKit
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
-  @IBOutlet weak var modernCheckForUpdatesItem: NSMenuItem?
-  @IBOutlet weak var modernQuickLookItem: NSMenuItem?
-  @IBOutlet weak var modernSaveToDiskItem: NSMenuItem?
-
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // "Populating a menu window that is already visible"
     NSMenu.swizzleIsUpdatedExcludingContentTypesOnce
-
-    if AppDesign.menuIconEvolution {
-      normalizeMainMenuIcons()
-    }
 
     let silentlyCheckUpdates: @Sendable () -> Void = {
       Task {
@@ -63,19 +55,5 @@ extension AppDelegate {
 
   @IBAction func openVersionHistory(_ sender: Any?) {
     NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/releases")
-  }
-}
-
-// MARK: - Private
-
-private extension AppDelegate {
-  func normalizeMainMenuIcons() {
-    let icon: (String) -> NSImage? = {
-      NSImage(systemSymbolName: $0, accessibilityDescription: nil)
-    }
-
-    modernCheckForUpdatesItem?.image = icon("arrow.trianglehead.2.clockwise.rotate.90.circle")
-    modernQuickLookItem?.image = icon("eye")
-    modernSaveToDiskItem?.image = icon("square.and.arrow.down")
   }
 }

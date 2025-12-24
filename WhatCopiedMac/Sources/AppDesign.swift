@@ -16,13 +16,6 @@ enum AppDesign {
     isMacOSTahoe
   }
 
-  /**
-   Returns `true` to gradually add icons to the menu bar.
-   */
-  static var menuIconEvolution: Bool {
-    isMacOSTahoe
-  }
-
   static var modernEffectView: NSView.Type {
     guard #available(macOS 26.0, *), modernStyle else {
       return NSVisualEffectView.self

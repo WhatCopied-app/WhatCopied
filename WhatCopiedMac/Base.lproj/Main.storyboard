@@ -21,7 +21,7 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check for Updates…" id="j38-jP-sHv">
+                                        <menuItem title="Check for Updates…" secondaryImage="arrow.trianglehead.2.clockwise.rotate.90.circle" catalog="system" id="j38-jP-sHv">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="lgL-E7-vp3"/>
@@ -68,13 +68,13 @@
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Quick Look…" keyEquivalent=" " id="dbI-LU-p8b">
+                                        <menuItem title="Quick Look…" secondaryImage="eye" catalog="system" keyEquivalent=" " id="dbI-LU-p8b">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="presentQuickLook:" target="Ady-hI-5gd" id="00D-EN-rgo"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save to Disk…" keyEquivalent="S" id="gUf-s0-t3N">
+                                        <menuItem title="Save to Disk…" secondaryImage="square.and.arrow.down" catalog="system" keyEquivalent="S" id="gUf-s0-t3N">
                                             <connections>
                                                 <action selector="saveToDisk:" target="Ady-hI-5gd" id="a2r-MZ-6Kx"/>
                                             </connections>
@@ -354,7 +354,7 @@
                                                 <action selector="showHelp:" target="Voe-Tx-rLC" id="UCH-dn-t2y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Version History" id="adf-oL-6jH">
+                                        <menuItem title="Version History" secondaryImage="clock.arrow.trianglehead.counterclockwise.rotate.90" catalog="system" id="adf-oL-6jH">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openVersionHistory:" target="Voe-Tx-rLC" id="QxN-ek-IR0"/>
@@ -369,13 +369,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target">
-                    <connections>
-                        <outlet property="modernCheckForUpdatesItem" destination="j38-jP-sHv" id="H8U-KN-DsS"/>
-                        <outlet property="modernQuickLookItem" destination="dbI-LU-p8b" id="bf7-Kc-xj2"/>
-                        <outlet property="modernSaveToDiskItem" destination="gUf-s0-t3N" id="z5o-PK-70g"/>
-                    </connections>
-                </customObject>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,4 +411,10 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.trianglehead.2.clockwise.rotate.90.circle" catalog="system" width="15" height="15"/>
+        <image name="clock.arrow.trianglehead.counterclockwise.rotate.90" catalog="system" width="16" height="15"/>
+        <image name="eye" catalog="system" width="21" height="13"/>
+        <image name="square.and.arrow.down" catalog="system" width="15" height="17"/>
+    </resources>
 </document>
