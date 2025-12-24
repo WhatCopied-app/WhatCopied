@@ -354,12 +354,6 @@
                                                 <action selector="showHelp:" target="Voe-Tx-rLC" id="UCH-dn-t2y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Issue Tracker" id="aez-uF-XbS">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="openIssueTracker:" target="Voe-Tx-rLC" id="o9f-gc-Kgz"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem title="Version History" id="adf-oL-6jH">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>

@@ -61,10 +61,6 @@ extension AppDelegate {
     NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/wiki")
   }
 
-  @IBAction func openIssueTracker(_ sender: Any?) {
-    NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/issues")
-  }
-
   @IBAction func openVersionHistory(_ sender: Any?) {
     NSWorkspace.shared.safelyOpenURL(string: "https://github.com/WhatCopied-app/WhatCopied/releases")
   }

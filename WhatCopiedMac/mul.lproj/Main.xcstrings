@@ -409,30 +409,6 @@
         }
       }
     },
-    "aez-uF-XbS.title" : {
-      "comment" : "Class = \"NSMenuItem\"; title = \"Issue Tracker\"; ObjectID = \"aez-uF-XbS\";",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Issue Tracker"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "问题追踪系统"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "問題追蹤系統"
-          }
-        }
-      }
-    },
     "aUF-d1-5bR.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Window\"; ObjectID = \"aUF-d1-5bR\";",
       "extractionState" : "extracted_with_value",
