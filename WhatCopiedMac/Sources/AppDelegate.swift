@@ -9,6 +9,10 @@ import AppKit
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
+  @IBOutlet weak var mainUpdateItem: NSMenuItem?
+  @IBOutlet weak var presentUpdateItem: NSMenuItem?
+  @IBOutlet weak var postponeUpdateItem: NSMenuItem?
+  @IBOutlet weak var ignoreUpdateItem: NSMenuItem?
   private var changeObserver: Task<Void, Never>?
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -22,7 +26,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     // Check for updates on launch with a delay
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: silentlyCheckUpdates)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+      self.presentUpdateItem?.title = Localized.Updater.viewReleasePage
+      self.postponeUpdateItem?.title = Localized.Updater.remindMeLater
+      self.ignoreUpdateItem?.title = Localized.Updater.skipThisVersion
+      silentlyCheckUpdates()
+    }
 
     // Check for updates on a weekly basis, for users who never quit apps
     Timer.scheduledTimer(withTimeInterval: 7 * 24 * 60 * 60, repeats: true) { _ in

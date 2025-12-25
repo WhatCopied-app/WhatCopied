@@ -52,6 +52,23 @@
         }
       }
     },
+    "✨ %@ is out" : {
+      "comment" : "Title format for new version is out",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 %@ 已发布"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 %@ 已釋出"
+          }
+        }
+      }
+    },
     "Check Version History" : {
       "comment" : "Title for the \"Check Version History\" button",
       "localizations" : {
@@ -235,23 +252,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "僅保留純文字"
-          }
-        }
-      }
-    },
-    "Learn More" : {
-      "comment" : "Title for the \"Learn More\" button",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "了解更多"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "瞭解更多"
           }
         }
       }
@@ -456,6 +456,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "原始碼"
+          }
+        }
+      }
+    },
+    "View Release Page" : {
+      "comment" : "Title for the \"View Release Page\" button",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看发布页面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檢視釋出頁面"
           }
         }
       }
