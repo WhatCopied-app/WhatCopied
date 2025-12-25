@@ -91,7 +91,7 @@ private extension AppUpdater {
     let alert = NSAlert()
     alert.messageText = String(format: Localized.Updater.newVersionAvailableTitle, newVersion.name)
     alert.markdownBody = newVersion.body
-    alert.addButton(withTitle: Localized.Updater.learnMore)
+    alert.addButton(withTitle: Localized.Updater.viewReleasePage)
 
     if explicitly {
       alert.addButton(withTitle: Localized.Updater.notNow)
@@ -100,32 +100,51 @@ private extension AppUpdater {
       alert.addButton(withTitle: Localized.Updater.skipThisVersion)
     }
 
-    switch alert.runModal() {
-    case .alertFirstButtonReturn: // Learn More
+    let showAlert = {
+      switch alert.runModal() {
+      case .alertFirstButtonReturn: // Learn More
+        NSWorkspace.shared.safelyOpenURL(string: newVersion.htmlUrl)
+      case .alertThirdButtonReturn: // Skip This Version
+        AppPreferences.Updater.skippedVersions.insert(newVersion.name)
+      default:
+        break
+      }
+    }
+
+    guard !explicitly, let delegate = (NSApp.delegate as? AppDelegate) else {
+      return showAlert()
+    }
+
+    let mainUpdateItem = delegate.mainUpdateItem
+    mainUpdateItem?.title = String(format: Localized.Updater.newVersionOut, newVersion.name)
+    mainUpdateItem?.isHidden = false
+
+    delegate.presentUpdateItem?.addAction("app.whatcopied.present-update") {
       NSWorkspace.shared.safelyOpenURL(string: newVersion.htmlUrl)
-    case .alertThirdButtonReturn: // Skip This Version
+    }
+
+    delegate.postponeUpdateItem?.addAction("app.whatcopied.postpone-update") {
+      mainUpdateItem?.isHidden = true
+    }
+
+    delegate.ignoreUpdateItem?.addAction("app.whatcopied.ignore-update") {
+      mainUpdateItem?.isHidden = true
       AppPreferences.Updater.skippedVersions.insert(newVersion.name)
-    default:
-      break
     }
   }
 }
 
 // MARK: - Private
 
-private extension Localized {
-  enum Updater {
-    static let upToDateTitle = String(localized: "You're up-to-date!", comment: "Title for the up-to-date info")
-    static let upToDateMessageFormat = String(localized: "WhatCopied %@ is currently the latest version.", comment: "Message for the up-to-date info")
-    static let newVersionAvailableTitle = String(localized: "WhatCopied %@ is available!", comment: "Title for new version available")
-    static let updateFailedTitle = String(localized: "Failed to get the update.", comment: "Title for failed to get the update")
-    static let updateFailedMessage = String(localized: "Please check your network connection or get the latest release from the version history.", comment: "Message for failed to get the update")
-    static let learnMore = String(localized: "Learn More", comment: "Title for the \"Learn More\" button")
-    static let notNow = String(localized: "Not Now", comment: "Title for the \"Not Now\" button")
-    static let remindMeLater = String(localized: "Remind Me Later", comment: "Title for the \"Remind Me Later\" button")
-    static let skipThisVersion = String(localized: "Skip This Version", comment: "Title for the \"Skip This Version\" button")
-    static let checkVersionHistory = String(localized: "Check Version History", comment: "Title for the \"Check Version History\" button")
-  }
+private extension Localized.Updater {
+  static let upToDateTitle = String(localized: "You're up-to-date!", comment: "Title for the up-to-date info")
+  static let upToDateMessageFormat = String(localized: "WhatCopied %@ is currently the latest version.", comment: "Message for the up-to-date info")
+  static let newVersionAvailableTitle = String(localized: "WhatCopied %@ is available!", comment: "Title for new version available")
+  static let updateFailedTitle = String(localized: "Failed to get the update.", comment: "Title for failed to get the update")
+  static let updateFailedMessage = String(localized: "Please check your network connection or get the latest release from the version history.", comment: "Message for failed to get the update")
+  static let newVersionOut = String(localized: "✨ %@ is out", comment: "Title format for new version is out")
+  static let notNow = String(localized: "Not Now", comment: "Title for the \"Not Now\" button")
+  static let checkVersionHistory = String(localized: "Check Version History", comment: "Title for the \"Check Version History\" button")
 }
 
 private extension AppPreferences {

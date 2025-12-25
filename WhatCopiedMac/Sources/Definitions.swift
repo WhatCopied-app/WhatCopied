@@ -43,6 +43,12 @@ enum Localized {
     static let preview = String(localized: "(no preview)", comment: "Error state: (no view)")
     static let limitedAccess = String(localized: "Limited Access", comment: "Error state: Limited Access")
   }
+
+  enum Updater {
+    static let viewReleasePage = String(localized: "View Release Page", comment: "Title for the \"View Release Page\" button")
+    static let remindMeLater = String(localized: "Remind Me Later", comment: "Title for the \"Remind Me Later\" button")
+    static let skipThisVersion = String(localized: "Skip This Version", comment: "Title for the \"Skip This Version\" button")
+  }
 }
 
 // Icon set used in the app: https://developer.apple.com/sf-symbols/

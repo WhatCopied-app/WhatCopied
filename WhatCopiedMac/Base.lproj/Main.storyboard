@@ -363,13 +363,37 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem hidden="YES" id="Ioo-9T-ka8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" id="Gi0-ZD-jfm">
+                                    <items>
+                                        <menuItem id="aqb-fG-0XM">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="EAO-sD-XcX"/>
+                                        <menuItem id="e05-Qn-4u2">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem id="DBQ-1o-XLL">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target">
+                    <connections>
+                        <outlet property="ignoreUpdateItem" destination="DBQ-1o-XLL" id="fGd-Dp-rAY"/>
+                        <outlet property="mainUpdateItem" destination="Ioo-9T-ka8" id="rxJ-Sk-CUO"/>
+                        <outlet property="postponeUpdateItem" destination="e05-Qn-4u2" id="jju-Yv-gIh"/>
+                        <outlet property="presentUpdateItem" destination="aqb-fG-0XM" id="vYy-j5-RnP"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
