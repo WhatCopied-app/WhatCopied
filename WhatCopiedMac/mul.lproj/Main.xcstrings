@@ -1153,6 +1153,30 @@
         }
       }
     },
+    "oMm-xZ-qbC.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Line Wrapping\"; ObjectID = \"oMm-xZ-qbC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Line Wrapping"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动折行"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動折行"
+          }
+        }
+      }
+    },
     "OwM-mh-QMV.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Find Previous\"; ObjectID = \"OwM-mh-QMV\";",
       "extractionState" : "extracted_with_value",

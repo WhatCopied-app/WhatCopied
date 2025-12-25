@@ -9,6 +9,7 @@ import AppKit
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
+  @IBOutlet weak var lineWrappingItem: NSMenuItem?
   @IBOutlet weak var mainUpdateItem: NSMenuItem?
   @IBOutlet weak var presentUpdateItem: NSMenuItem?
   @IBOutlet weak var postponeUpdateItem: NSMenuItem?
@@ -64,6 +65,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
     true
+  }
+}
+
+// MARK: - NSMenuDelegate
+
+extension AppDelegate: NSMenuDelegate {
+  func menuNeedsUpdate(_ menu: NSMenu) {
+    guard let displayMode = (NSApp.keyWindow?.contentViewController as? MainVC)?.displayMode else {
+      return Logger.log(.error, "Unexpected nil for displayMode")
+    }
+
+    if displayMode.usesTextView {
+      // Always on and cannot change
+      lineWrappingItem?.state = .on
+    } else if displayMode != .sourceCode {
+      // Always off and cannot change
+      lineWrappingItem?.state = .off
+    } else {
+      // Depends on the user setting
+      lineWrappingItem?.state = AppPreferences.Viewer.lineWrapping ? .on : .off
+    }
   }
 }
 
