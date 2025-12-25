@@ -9,6 +9,8 @@ import AppKit
 
 @main
 final class AppDelegate: NSObject, NSApplicationDelegate {
+  private var changeObserver: Task<Void, Never>?
+
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // "Populating a menu window that is already visible"
     NSMenu.swizzleIsUpdatedExcludingContentTypesOnce
@@ -26,9 +28,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     Timer.scheduledTimer(withTimeInterval: 7 * 24 * 60 * 60, repeats: true) { _ in
       silentlyCheckUpdates()
     }
+  }
 
-    // Run a observer to refresh the pasteboard repeatedly
-    PasteObserver.default.startObserving()
+  func applicationWillBecomeActive(_ notification: Notification) {
+    let notifyChanges = {
+      NotificationCenter.default.post(name: .pasteboardChanged, object: nil)
+    }
+
+    changeObserver?.cancel()
+    notifyChanges()
+
+    changeObserver = Task { @MainActor in
+      for await _ in PasteObserver.default.changes() {
+        notifyChanges()
+      }
+    }
+  }
+
+  func applicationDidResignActive(_ notification: Notification) {
+    changeObserver?.cancel()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
