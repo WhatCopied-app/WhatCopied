@@ -102,7 +102,7 @@ private extension AppUpdater {
 
     let showAlert = {
       switch alert.runModal() {
-      case .alertFirstButtonReturn: // Learn More
+      case .alertFirstButtonReturn: // View Release Page
         NSWorkspace.shared.safelyOpenURL(string: newVersion.htmlUrl)
       case .alertThirdButtonReturn: // Skip This Version
         AppPreferences.Updater.skippedVersions.insert(newVersion.name)
