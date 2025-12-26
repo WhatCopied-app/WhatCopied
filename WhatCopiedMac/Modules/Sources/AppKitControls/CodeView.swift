@@ -14,8 +14,10 @@ import os.log
  */
 public final class CodeView: NSView {
   private let htmlView = HtmlView()
+  private var lineWrapping: Bool
 
-  public init(margin: Double) {
+  public init(margin: Double, lineWrapping: Bool) {
+    self.lineWrapping = lineWrapping
     super.init(frame: .zero)
 
     htmlView.loadHtml(indexHtml?.replacingOccurrences(of: "\"{{MARGIN}}\"", with: "\(margin)px") ?? "")
@@ -36,7 +38,12 @@ public final class CodeView: NSView {
       return os.Logger().log(level: .error, "Invalid JSON string for: \(data)")
     }
 
-    htmlView.evaluateJavaScript("loadCode(\(payload))")
+    htmlView.evaluateJavaScript("loadCode(\(payload), \(lineWrapping))")
+  }
+
+  public func setLineWrapping(_ isEnabled: Bool) {
+    self.lineWrapping = isEnabled
+    self.htmlView.evaluateJavaScript("setLineWrapping(\(isEnabled))")
   }
 
   override public func layout() {

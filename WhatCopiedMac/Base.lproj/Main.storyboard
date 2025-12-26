@@ -310,6 +310,13 @@
                                                 <action selector="runToolbarCustomizationPalette:" target="Ady-hI-5gd" id="pQI-g3-MTW"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="MkS-or-Dzk"/>
+                                        <menuItem title="Line Wrapping" secondaryImage="text.alignleft" catalog="system" id="oMm-xZ-qbC">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleLineWrapping:" target="Ady-hI-5gd" id="WVy-PM-0Wq"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
@@ -318,6 +325,9 @@
                                             </connections>
                                         </menuItem>
                                     </items>
+                                    <connections>
+                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="AgO-Zo-IRb"/>
+                                    </connections>
                                 </menu>
                             </menuItem>
                             <menuItem title="Window" id="aUF-d1-5bR">
@@ -389,6 +399,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WhatCopied" customModuleProvider="target">
                     <connections>
                         <outlet property="ignoreUpdateItem" destination="DBQ-1o-XLL" id="fGd-Dp-rAY"/>
+                        <outlet property="lineWrappingItem" destination="oMm-xZ-qbC" id="nhl-0I-P6V"/>
                         <outlet property="mainUpdateItem" destination="Ioo-9T-ka8" id="rxJ-Sk-CUO"/>
                         <outlet property="postponeUpdateItem" destination="e05-Qn-4u2" id="jju-Yv-gIh"/>
                         <outlet property="presentUpdateItem" destination="aqb-fG-0XM" id="vYy-j5-RnP"/>
@@ -444,5 +455,6 @@
         <image name="eye" catalog="system" width="21" height="13"/>
         <image name="square.and.arrow.down" catalog="system" width="15" height="17"/>
         <image name="tag" catalog="system" width="17" height="17"/>
+        <image name="text.alignleft" catalog="system" width="16" height="13"/>
     </resources>
 </document>

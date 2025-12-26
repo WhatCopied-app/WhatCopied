@@ -1456,9 +1456,18 @@
   }
 </style>
 <script>
-  function loadCode(payload) {
+  function loadCode(payload, lineWrapping) {
     const node = document.querySelector("#code");
     node.innerHTML = hljs.highlightAuto(payload.code).value;
+    setLineWrapping(lineWrapping);
+  }
+
+  function setLineWrapping(isEnabled) {
+    const nodes = Array.from(document.querySelectorAll("pre"));
+    nodes.forEach(node => {
+      node.style.whiteSpace = isEnabled ? "pre-wrap" : "";
+      node.style.overflowWrap = isEnabled ? "break-word" : "";
+    });
   }
 </script>
 </body>

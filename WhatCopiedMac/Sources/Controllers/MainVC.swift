@@ -91,3 +91,28 @@ final class MainVC: NSSplitViewController {
     // no-op
   }
 }
+
+// MARK: - Line Wrapping
+
+extension MainVC: NSMenuItemValidation {
+  private var supportedModes: [DisplayMode] {
+    [.sourceCode]
+  }
+
+  func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+    if menuItem.action == #selector(toggleLineWrapping(_:)) {
+      return supportedModes.contains(displayMode)
+    }
+
+    return true
+  }
+
+  @IBAction func toggleLineWrapping(_ sender: Any?) {
+    let isEnabled = !AppPreferences.Viewer.lineWrapping
+    AppPreferences.Viewer.lineWrapping = isEnabled
+
+    supportedModes.forEach {
+      dataViewer.setLineWrapping(isEnabled, mode: $0)
+    }
+  }
+}

@@ -47,7 +47,7 @@ final class DataViewer: NSView {
   }()
 
   private let htmlView = HtmlView()
-  private let codeView = CodeView(margin: AppDesign.contentMargin)
+  private let codeView = CodeView(margin: AppDesign.contentMargin, lineWrapping: AppPreferences.Viewer.lineWrapping)
   private let imageView = ImageView()
   private let emptyView = StaticText(Localized.ErrorState.preview)
 
@@ -118,6 +118,15 @@ final class DataViewer: NSView {
       } else {
         showEmptyView()
       }
+    }
+  }
+
+  func setLineWrapping(_ isEnabled: Bool, mode: DisplayMode) {
+    switch mode {
+    case .sourceCode:
+      codeView.setLineWrapping(isEnabled)
+    default:
+      break
     }
   }
 }

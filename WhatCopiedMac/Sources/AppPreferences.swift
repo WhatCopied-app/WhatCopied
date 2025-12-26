@@ -10,7 +10,12 @@ import AppKit
 /**
  UserDefaults wrapper with handy getters and setters.
  */
-enum AppPreferences {}
+enum AppPreferences {
+  enum Viewer {
+    @Storage(key: "viewer.line-wrapping", defaultValue: false)
+    static var lineWrapping: Bool
+  }
+}
 
 @MainActor
 @propertyWrapper
