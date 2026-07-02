@@ -97,7 +97,7 @@ public extension NSPasteboard {
   }
 
   func clearOtherPasteboards() {
-    for pasteboard in NSPasteboard.pasteboards where pasteboard.name != name {
+    for pasteboard in Self.pasteboards where pasteboard.name != name {
       pasteboard.clearContents()
     }
   }
@@ -115,7 +115,7 @@ public extension NSPasteboard {
 
 private extension NSPasteboard {
   func getDataItems() -> [NSPasteboard.PasteboardType: Data] {
-    (types ?? []).reduce(into: [NSPasteboard.PasteboardType: Data]()) { items, type in
+    (types ?? []).reduce(into: [Self.PasteboardType: Data]()) { items, type in
       items[type] = data(forType: type)
     }
   }
