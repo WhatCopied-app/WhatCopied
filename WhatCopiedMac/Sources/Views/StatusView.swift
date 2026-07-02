@@ -12,9 +12,11 @@ import SwiftUI
  Status view that displays byte count and data type.
  */
 final class StatusView: NSView {
-  private let view = StatusViewImpl()
+  private let model = StatusViewImpl.Model()
+  private let view: StatusViewImpl
 
   init() {
+    self.view = StatusViewImpl(model: model)
     super.init(frame: .zero)
 
     let wrapper = NSHostingView(rootView: view)
@@ -28,11 +30,11 @@ final class StatusView: NSView {
 
   func reloadData(_ data: DataWrapper?, dataType: String) {
     if let data {
-      view.model.text = "\(data.byteCount): \(dataType)"
-      view.model.style = .primary
+      model.text = "\(data.byteCount): \(dataType)"
+      model.style = .primary
     } else {
-      view.model.text = Localized.ErrorState.data
-      view.model.style = .secondary
+      model.text = Localized.ErrorState.data
+      model.style = .secondary
     }
   }
 }
@@ -46,7 +48,11 @@ private struct StatusViewImpl: View {
     var style: any ShapeStyle = .primary
   }
 
-  @State fileprivate var model = Model()
+  fileprivate let model: Model
+
+  init(model: Model) {
+    self.model = model
+  }
 
   var body: some View {
     VStack(spacing: 0) {

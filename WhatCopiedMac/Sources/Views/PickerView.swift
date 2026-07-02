@@ -13,13 +13,14 @@ import UniformTypeIdentifiers
  Picker view used to select pasteboard and data type.
  */
 final class PickerView: NSView {
+  private let model = PickerViewImpl.Model()
   private let view: PickerViewImpl
 
   init(
     pasteboardChanged: @escaping ((NSPasteboard) -> Void),
     dataTypeChanged: @escaping ((String) -> Void)
   ) {
-    self.view = PickerViewImpl(pasteboardChanged, dataTypeChanged)
+    self.view = PickerViewImpl(model, pasteboardChanged, dataTypeChanged)
     super.init(frame: .zero)
 
     let wrapper = NSHostingView(rootView: view)
@@ -32,20 +33,20 @@ final class PickerView: NSView {
   }
 
   func shouldReselect(types: [String]) -> Bool {
-    types != view.model.types
+    types != model.types
   }
 
   func reloadTypes(_ types: [String]) {
-    view.model.types = types
+    model.types = types
   }
 
   func selectType(at index: Int) {
-    guard index >= 0 && index < view.model.types.count else {
-      return Logger.log(.info, "Invalid index: \(index) of types: \(self.view.model.types)")
+    guard index >= 0 && index < model.types.count else {
+      return Logger.log(.info, "Invalid index: \(index) of types: \(self.model.types)")
     }
 
-    let type = view.model.types[index]
-    view.model.selection = type
+    let type = model.types[index]
+    model.selection = type
     view.dataTypeChanged(type)
   }
 }
@@ -59,16 +60,18 @@ private struct PickerViewImpl: View {
     var selection = ""
   }
 
-  @State fileprivate var model = Model()
+  fileprivate let model: Model
   @State fileprivate var pasteboardName = NSPasteboard.pasteboards.first?.readableName ?? ""
 
   fileprivate let pasteboardChanged: ((NSPasteboard) -> Void)
   fileprivate let dataTypeChanged: ((String) -> Void)
 
   init(
+    _ model: Model,
     _ pasteboardChanged: @escaping ((NSPasteboard) -> Void),
     _ dataTypeChanged: @escaping ((String) -> Void)
   ) {
+    self.model = model
     self.pasteboardChanged = pasteboardChanged
     self.dataTypeChanged = dataTypeChanged
   }
