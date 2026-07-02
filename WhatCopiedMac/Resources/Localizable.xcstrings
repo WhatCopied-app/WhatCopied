@@ -511,7 +511,7 @@
         }
       }
     },
-    "You're up-to-date!" : {
+    "You’re up-to-date!" : {
       "comment" : "Title for the up-to-date info",
       "localizations" : {
         "zh-Hans" : {
