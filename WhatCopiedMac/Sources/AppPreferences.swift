@@ -12,7 +12,7 @@ import AppKit
  */
 enum AppPreferences {
   enum Viewer {
-    @Storage(key: "viewer.line-wrapping", defaultValue: false)
+    @Storage(key: "viewer.line-wrapping", defaultValue: true)
     static var lineWrapping: Bool
   }
 }
