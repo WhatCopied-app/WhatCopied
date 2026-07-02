@@ -7,7 +7,6 @@
 
 import AppKit
 
-@main
 final class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var lineWrappingItem: NSMenuItem?
   @IBOutlet weak var mainUpdateItem: NSMenuItem?
@@ -16,10 +15,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var ignoreUpdateItem: NSMenuItem?
   private var changeObserver: Task<Void, Never>?
 
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
-    // "Populating a menu window that is already visible"
-    NSMenu.swizzleIsUpdatedExcludingContentTypesOnce
-
+  func applicationDidFinishLaunching(_ notification: Notification) {
     let silentlyCheckUpdates: @Sendable () -> Void = {
       Task {
         await AppUpdater.checkForUpdates(explicitly: false)

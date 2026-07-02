@@ -19,13 +19,11 @@ extension MainVC {
     sidebarItem.maximumThickness = Constants.sidebarMaxWidth
     addSplitViewItem(sidebarItem)
 
+    let sidebar = sidebarItem.viewController.view
+    pickerView.fillView(sidebar)
+
     let detailPaneItem = NSSplitViewItem(viewController: NSViewController())
     addSplitViewItem(detailPaneItem)
-
-    let sidebar = AppDesign.modernEffectView.init()
-    (sidebar as? NSVisualEffectView)?.material = .titlebar
-    sidebar.fillView(sidebarItem.viewController.view)
-    pickerView.fillView(sidebar)
 
     let detailPane = NSView()
     detailPane.fillView(detailPaneItem.viewController.view)
@@ -47,6 +45,17 @@ extension MainVC {
       statusView.bottomAnchor.constraint(equalTo: detailPane.bottomAnchor),
       statusView.heightAnchor.constraint(equalToConstant: 26),
     ])
+  }
+
+  func updateSidebarStyle() {
+    // Translucent window
+    let baseColor = NSColor.windowBackgroundColor.resolvedColor()
+    view.window?.backgroundColor = baseColor.withAlphaComponent(0.6)
+    view.window?.isOpaque = false
+
+    // Opaque detail pane
+    dataViewer.layerBackgroundColor = baseColor
+    statusView.layerBackgroundColor = baseColor
   }
 
   func handleMouseMoved(with event: NSEvent) {
