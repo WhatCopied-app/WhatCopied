@@ -16,14 +16,6 @@ enum AppDesign {
     isMacOSTahoe
   }
 
-  static var modernEffectView: NSView.Type {
-    guard #available(macOS 26.0, *), modernStyle else {
-      return NSVisualEffectView.self
-    }
-
-    return NSGlassEffectView.self
-  }
-
   static var contentMargin: Double {
     modernStyle ? 15 : 10
   }

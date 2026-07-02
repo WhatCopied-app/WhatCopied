@@ -8,6 +8,20 @@
 import AppKit
 
 public extension NSView {
+  var layerBackgroundColor: NSColor? {
+    get {
+      guard wantsLayer, let cgColor = layer?.backgroundColor else {
+        return nil
+      }
+
+      return NSColor(cgColor: cgColor)
+    }
+    set {
+      wantsLayer = true
+      layer?.backgroundColor = newValue?.resolvedColor(with: effectiveAppearance).cgColor
+    }
+  }
+
   func fillView(_ view: NSView) {
     translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(self)

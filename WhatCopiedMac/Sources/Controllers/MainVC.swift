@@ -74,6 +74,11 @@ final class MainVC: NSSplitViewController {
     reloadTypes()
   }
 
+  override func viewDidLayout() {
+    super.viewDidLayout()
+    updateSidebarStyle()
+  }
+
   override func mouseMoved(with event: NSEvent) {
     super.mouseMoved(with: event)
     handleMouseMoved(with: event)

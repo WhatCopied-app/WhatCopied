@@ -18,4 +18,17 @@ public extension NSColor {
   static func theme(light: NSColor, dark: NSColor) -> NSColor {
     NSColor(name: nil) { $0.isDarkMode ? dark : light }
   }
+
+  @MainActor
+  func resolvedColor(with appearance: NSAppearance = NSApp.effectiveAppearance) -> NSColor {
+    var cgColor: CGColor?
+    appearance.performAsCurrentDrawingAppearance {
+      // [macOS 26] Revisit this later (#1281)
+      MainActor.assumeIsolated {
+        cgColor = self.cgColor
+      }
+    }
+
+    return NSColor(cgColor: cgColor ?? self.cgColor) ?? self
+  }
 }
