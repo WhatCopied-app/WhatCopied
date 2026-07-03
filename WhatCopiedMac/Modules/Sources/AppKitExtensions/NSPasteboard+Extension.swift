@@ -40,6 +40,20 @@ public extension NSPasteboard {
   }
 
   /**
+   SF Symbol name representing the pasteboard, technical terms not localized.
+   */
+  var iconName: String {
+    switch name {
+    case .general: return "list.clipboard"
+    case .font: return "paintbrush.pointed"
+    case .ruler: return "ruler"
+    case .find: return "magnifyingglass"
+    case .drag: return "hand.draw"
+    default: return "doc"
+    }
+  }
+
+  /**
    Types in a human-friendly order, image first, then plain text, then rich text, then others.
    */
   var sortedTypes: [NSPasteboard.PasteboardType] {

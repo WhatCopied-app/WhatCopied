@@ -16,6 +16,11 @@ UserDefaults.standard.set(false, forKey: "NSSplitViewItemSidebarDefaultsToFloati
 // "Populating a menu window that is already visible"
 NSMenu.swizzleIsUpdatedExcludingContentTypesOnce
 
+// FB23544345: Apple forgot to bring .preferredImageVisibility to SwiftUI
+if #available(macOS 27.0, *) {
+  NSMenuItem.swizzlePreferredImageVisibilityOnce
+}
+
 let app = NSApplication.shared
 let delegate = AppDelegate()
 
