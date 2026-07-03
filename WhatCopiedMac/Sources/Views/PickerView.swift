@@ -79,12 +79,17 @@ private struct PickerViewImpl: View {
   var body: some View {
     VStack(spacing: 0) {
       Picker(selection: $pasteboardName) {
-        ForEach(NSPasteboard.pasteboards.map { $0.readableName }, id: \.self) {
-          Text($0)
+        ForEach(NSPasteboard.pasteboards, id: \.readableName) { pasteboard in
+          HStack(alignment: .center) {
+            Image(systemName: pasteboard.iconName)
+            Text(spacedTitle(pasteboard.readableName))
+          }
+          .tag(pasteboard.readableName)
         }
       } label: {
         // no-op
       }
+      .controlSize(.large)
       .modifier(FlexibleButtonSize())
       .padding(10)
       .onChange(of: pasteboardName) {
@@ -156,6 +161,21 @@ private extension PickerViewImpl {
     Logger.assert(pasteboard != nil, "Invalid pasteboard: \(pasteboardName)")
 
     return pasteboard
+  }
+
+  /**
+   Prefix the title with three thin spaces to align with the icon, only needed on macOS 26.
+   */
+  func spacedTitle(_ title: String) -> String {
+    guard #available(macOS 26.0, *) else {
+      return title
+    }
+
+    guard #unavailable(macOS 27.0) else {
+      return title
+    }
+
+    return "\u{2009}\u{2009}\u{2009}\(title)"
   }
 }
 
