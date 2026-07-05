@@ -80,11 +80,9 @@ private struct PickerViewImpl: View {
     VStack(spacing: 0) {
       Picker(selection: $pasteboardName) {
         ForEach(NSPasteboard.pasteboards, id: \.readableName) { pasteboard in
-          HStack(alignment: .center) {
-            Image(systemName: pasteboard.iconName)
-            Text(spacedTitle(pasteboard.readableName))
-          }
-          .tag(pasteboard.readableName)
+          Label(spacedTitle(pasteboard.readableName), systemImage: pasteboard.iconName)
+            .labelStyle(.titleAndIcon)
+            .tag(pasteboard.readableName)
         }
       } label: {
         // no-op
