@@ -27,9 +27,8 @@ final class DataViewer: NSView {
       textView.usesFindPanel = true
       textView.textContainer?.lineFragmentPadding = 0
 
-      // We avoid using width in textContainerInset as it disrupts the cursor style
       textView.textContainerInset = CGSize(
-        width: 0,
+        width: Constants.textContainerInset,
         height: Constants.textContainerInset
       )
 
@@ -59,7 +58,7 @@ final class DataViewer: NSView {
     addSubview(textView)
 
     NSLayoutConstraint.activate([
-      textView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.textContainerInset),
+      textView.leadingAnchor.constraint(equalTo: leadingAnchor),
       textView.trailingAnchor.constraint(equalTo: trailingAnchor),
       textView.topAnchor.constraint(equalTo: topAnchor),
       textView.bottomAnchor.constraint(equalTo: bottomAnchor),

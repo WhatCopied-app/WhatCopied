@@ -63,6 +63,18 @@ extension MainVC {
       return
     }
 
+    // NSTextView can leave an I-beam over scrollbars when using a horizontal textContainerInset
+    let hitLocation = view.superview?.convert(event.locationInWindow, from: nil) ?? event.locationInWindow
+    var hitView = view.hitTest(hitLocation)
+    while let hoveredView = hitView {
+      if hoveredView is NSScroller {
+        NSCursor.arrow.set()
+        return
+      }
+
+      hitView = hoveredView.superview
+    }
+
     let boundary = view.bounds.height - view.safeAreaInsets.top
     let location = event.locationInWindow.y
 
