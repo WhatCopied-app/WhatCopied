@@ -2,7 +2,7 @@
 
 # WhatCopied
 
-[![](https://img.shields.io/badge/Platform-macOS_15.0+-blue?color=007bff)](https://github.com/WhatCopied-app/WhatCopied/releases/latest)  [![](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml)
+[![](https://img.shields.io/badge/Platform-macOS_26.0+-blue?color=007bff)](https://github.com/WhatCopied-app/WhatCopied/releases/latest)  [![](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/WhatCopied-app/WhatCopied/actions/workflows/build.yml)
 
 The ultimate pasteboard debugger for macOS developers.
 

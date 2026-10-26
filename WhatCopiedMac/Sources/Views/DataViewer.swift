@@ -76,14 +76,6 @@ final class DataViewer: NSView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func layout() {
-    super.layout()
-
-    if !AppDesign.modernStyle {
-      layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
-    }
-  }
-
   func reloadData(_ data: DataWrapper?, mode: DisplayMode) {
     guard let data else {
       return showEmptyView()
@@ -100,7 +92,7 @@ final class DataViewer: NSView {
     case .text:
       textView.monospacedText = data.plainText
     case .html:
-      htmlView.loadHtml(data.plainText, padding: AppDesign.modernStyle ? 7.0 : nil)
+      htmlView.loadHtml(data.plainText, padding: 7.0)
     case .sourceCode:
       codeView.loadCode(data.plainText)
     case .hex:

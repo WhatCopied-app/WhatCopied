@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.4
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
   name: "Modules",
   platforms: [
-    .macOS(.v15),
+    .macOS(.v26),
   ],
   products: [
     .library(
@@ -35,9 +35,6 @@ let package = Package(
       resources: [
         .process("Resources"),
       ],
-      swiftSettings: [
-        .enableExperimentalFeature("StrictConcurrency")
-      ],
       plugins: [
         .plugin(name: "SwiftLint", package: "WhatCopiedTools"),
       ]
@@ -45,9 +42,6 @@ let package = Package(
     .target(
       name: "AppKitExtensions",
       path: "Sources/AppKitExtensions",
-      swiftSettings: [
-        .enableExperimentalFeature("StrictConcurrency")
-      ],
       plugins: [
         .plugin(name: "SwiftLint", package: "WhatCopiedTools"),
       ]
@@ -55,9 +49,6 @@ let package = Package(
     .target(
       name: "FoundationExtensions",
       path: "Sources/FoundationExtensions",
-      swiftSettings: [
-        .enableExperimentalFeature("StrictConcurrency")
-      ],
       plugins: [
         .plugin(name: "SwiftLint", package: "WhatCopiedTools"),
       ]
