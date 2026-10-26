@@ -8,17 +8,23 @@
 import AppKit
 
 /**
- Simple NSScrollView wrapper to display scalable images.
+ Displays images fitted to the visible viewport at 1x, with magnification for zooming in.
  */
 public final class ImageView: NSScrollView {
+  override public var contentInsets: NSEdgeInsets {
+    didSet {
+      needsLayout = true
+    }
+  }
+
   public var image: NSImage? {
     get {
       actualView.image
     }
     set {
       actualView.image = newValue
-      contentView.scroll(to: CGPoint(x: 0, y: safeAreaInsets.top))
       magnification = 1.0
+      needsLayout = true
     }
   }
 
@@ -41,7 +47,18 @@ public final class ImageView: NSScrollView {
 
   override public func layout() {
     super.layout()
-    actualView.frame = bounds
+
+    // Clip-view insets include toolbar and scroller space, in magnified coordinates
+    let insets = contentView.contentInsets
+    let viewport = contentView.bounds.size
+    let size = NSSize(
+      width: max(0, viewport.width - insets.left - insets.right) * magnification,
+      height: max(0, viewport.height - insets.top - insets.bottom) * magnification
+    )
+
+    if actualView.frame.size != size {
+      actualView.setFrameSize(size)
+    }
   }
 
   // MARK: - Private
