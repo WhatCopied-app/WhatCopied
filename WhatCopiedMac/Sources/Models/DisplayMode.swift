@@ -15,6 +15,17 @@ enum DisplayMode: CaseIterable, CustomStringConvertible {
   case image
   case hex
 
+  var iconName: String {
+    switch self {
+    case .text: return "doc.plaintext"
+    case .html: return "safari"
+    case .rtf: return "doc.richtext"
+    case .sourceCode: return "curlybraces"
+    case .image: return "photo"
+    case .hex: return "number"
+    }
+  }
+
   /**
    Whether to render with an NSTextView.
    */

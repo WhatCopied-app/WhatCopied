@@ -92,6 +92,10 @@ private extension MainVC {
       action: #selector(didSelectViewer(_:))
     )
 
+    for (subitem, mode) in zip(item.subitems, DisplayMode.allCases) {
+      subitem.image = NSImage(systemSymbolName: mode.iconName, accessibilityDescription: mode.description)
+    }
+
     item.label = Localized.Toolbar.displayMode
     item.controlRepresentation = .collapsed
     item.selectionMode = .selectOne
