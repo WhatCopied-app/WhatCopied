@@ -25,7 +25,7 @@ WhatCopied checks for updates automatically. You can also check manually via the
 
 > For information on pasteboard access issues in macOS 15.4 and later, please refer to our [wiki](https://github.com/WhatCopied-app/WhatCopied/wiki#limited-access).
 >
-> Older builds: [macos-14](https://github.com/WhatCopied-app/WhatCopied/releases/tag/macos-14).
+> Older builds: [macos-14](https://github.com/WhatCopied-app/WhatCopied/releases/tag/macos-14), [macos-15](https://github.com/WhatCopied-app/WhatCopied/releases/tag/macos-15).
 
 ## Why WhatCopied
 
