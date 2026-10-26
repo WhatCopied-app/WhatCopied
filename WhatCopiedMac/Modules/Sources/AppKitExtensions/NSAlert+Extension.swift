@@ -36,13 +36,13 @@ private extension NSAlert {
   }
 
   private enum Constants {
-    static let fontSize: Double = 11
+    static let fontSize: Double = 12
     static let contentWidth: Double = 220
-    static let contentPadding: Double = 10
   }
 
   func updateAccessoryView(with markdown: String) {
     let textView = NSTextView()
+    textView.textContainer?.lineFragmentPadding = 0
     textView.font = .systemFont(ofSize: Constants.fontSize)
     textView.drawsBackground = false
     textView.isEditable = false
@@ -60,10 +60,10 @@ private extension NSAlert {
     )
 
     let contentSize = CGSize(width: Constants.contentWidth, height: 0)
-    textView.frame = CGRect(origin: CGPoint(x: Constants.contentPadding, y: 0), size: contentSize)
+    textView.frame = CGRect(origin: .zero, size: contentSize)
     textView.sizeToFit()
 
-    let wrapper = NSView(frame: textView.frame.insetBy(dx: -Constants.contentPadding, dy: 0))
+    let wrapper = NSView(frame: textView.frame)
     wrapper.addSubview(textView)
     accessoryView = wrapper
     layout()
