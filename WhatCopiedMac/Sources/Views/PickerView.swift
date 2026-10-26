@@ -88,7 +88,7 @@ private struct PickerViewImpl: View {
         // no-op
       }
       .controlSize(.large)
-      .modifier(FlexibleButtonSize())
+      .buttonSizing(.flexible)
       .padding(10)
       .onChange(of: pasteboardName) {
         if let pasteboardObject {
@@ -119,7 +119,7 @@ private struct PickerViewImpl: View {
               if let readableName = UTType(type)?.localizedDescription {
                 Text(readableName)
                   .font(.subheadline)
-                  .foregroundColor(.secondary)
+                  .foregroundStyle(.secondary)
               }
             }
             .help(type)
@@ -165,24 +165,10 @@ private extension PickerViewImpl {
    Prefix the title with three thin spaces to align with the icon, only needed on macOS 26.
    */
   func spacedTitle(_ title: String) -> String {
-    guard #available(macOS 26.0, *) else {
-      return title
-    }
-
     guard #unavailable(macOS 27.0) else {
       return title
     }
 
     return "\u{2009}\u{2009}\u{2009}\(title)"
-  }
-}
-
-private struct FlexibleButtonSize: ViewModifier {
-  func body(content: Content) -> some View {
-    if #available(macOS 26.0, *) {
-      content.buttonSizing(.flexible)
-    } else {
-      content
-    }
   }
 }
