@@ -23,7 +23,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(path: "../WhatCopiedTools"),
+    .package(path: "../../WhatCopiedTools"),
   ],
   targets: [
     .target(
